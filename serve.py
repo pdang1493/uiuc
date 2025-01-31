@@ -7,8 +7,8 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def stress_cpu():
     # Start stress_cpu.py in a non-blocking manner
-    subprocess.Popen(['python', 'stress_cpu.py'])
-    return 'CPU stress test started', 200
+    subprocess.Popen(['python3', 'stress_cpu.py'])
+    return f"push EC2 instance {socket.gethostbyname(hostname)} to maximum CPU utilization"
 
 @app.route('/', methods=['GET'])
 def get_private_ip():
